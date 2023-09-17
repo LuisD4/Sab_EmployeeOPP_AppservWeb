@@ -3,9 +3,9 @@ using EmployeeOPP.Classes;
 try
 {
     //declaracion de variables 
-    int day, month, year, hours;
+    int day, month, year, hours ,comissionPercentaje;
     string firstName, lastName;
-    decimal salary,hourValue;
+    decimal salary,hourValue,sales;
 
     //Peticion de datos
     Console.WriteLine("OOP APPLICATION");
@@ -40,6 +40,7 @@ try
     salary = Decimal.Parse(Console.ReadLine());
 
     Console.WriteLine("_________________________");
+
     //Peticion de datos HourlyEmployee : Employee
     Console.WriteLine("CONTRATO TEMPORAL(POR HORAS)");
 
@@ -49,10 +50,23 @@ try
     Console.WriteLine("Ingresar Precio de Hora ");
     hourValue= Decimal.Parse(Console.ReadLine());
 
+    Console.WriteLine("_________________________");
+
+    //Peticion de datos ComissionEmployee : Employee
+    Console.WriteLine("CONTRATO DE COMISIONES POR VENTAS");
+
+    Console.WriteLine("Ingresar porcentaje de comision");
+    comissionPercentaje = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Ingresar venta ");
+    sales = Decimal.Parse(Console.ReadLine());
+
+
 
 
     //HardCoding = QuemarCodigo
     //Employee employee = new Employee(); /// no deja por que es una clase abstracta
+    //IMPRESION DE DATOS DE  SalaryEmploye : Employee
     SalaryEmployee salaryEmployee = new SalaryEmployee()
     {
         Id = 123456,
@@ -69,6 +83,7 @@ try
 
     Console.WriteLine(salaryEmployee);
 
+    //IMPRESION DE DATOS DE  HourlyEmployee : Employee
     HourlyEmployee hourlyEmployee = new HourlyEmployee()
     {
         Id = 123456,
@@ -85,6 +100,24 @@ try
     };
 
     Console.WriteLine(hourlyEmployee);
+
+    //IMPRESION DE DATOS DE  ComissionEmployee : Employee
+    ComissionEmployee comissionEmployee =new ComissionEmployee()
+    {
+        Id = 123456,
+        FirstName = firstName,
+        LastName = lastName,
+        BirthDate = dateObject,
+        HiringDate = dateObject,
+        IsActive = true,
+        Sales = sales,
+        CommisionPercentaje = comissionPercentaje,
+        SalesTotal=sales*comissionPercentaje / 100,
+
+
+    };
+
+    Console.WriteLine(comissionEmployee);
 
 
 }

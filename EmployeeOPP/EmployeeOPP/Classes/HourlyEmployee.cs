@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmployeeOPP.Classes
+﻿namespace EmployeeOPP.Classes
 {
     public class HourlyEmployee : Employee //llamo a la clase abstracta 
     {
@@ -14,7 +7,7 @@ namespace EmployeeOPP.Classes
         public decimal TotalHoursPrice { get; set; }
         public HourlyEmployee()// "buena practica"
         {
-    
+
         }
         public override decimal GetValueToPay()//retorno el valor 
         {
@@ -23,9 +16,9 @@ namespace EmployeeOPP.Classes
         public override string ToString()
         {
             return $"{base.ToString()}" +
-                $" Horas trabajadas: {Hours}\n\t" + $" Precio hora: {HourValue}\n\t" +$" Total de salario por horas trabajas: {TotalHoursPrice:C2}\n\t";
+                $" Horas trabajadas: {Hours}\n\t" + $" Precio hora: {HourValue}\n\t" + $" Total de salario por horas trabajas: {TotalHoursPrice:C2}\n\t";
         }
 
     }
-   
+
 }
